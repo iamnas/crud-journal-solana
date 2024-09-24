@@ -31,11 +31,11 @@ export function JournalCreate() {
 
   return (
     <div >
-      <div className='flex flex-col justify-center items-center mb-4'>
-      <input type="text" placeholder='Title' value={title} onChange={(e) => setTitle(e.target.value)} className='input input-bordered w-full max-w-xs' />
-      <textarea placeholder='Message' value={message} onChange={(e) => setMessage(e.target.value)} className='textarea textarea-bordered w-full max-w-xs' />
+      <div className='flex flex-col justify-center items-center mb-4 gap-2'>
+        <input type="text" placeholder='Title' value={title} onChange={(e) => setTitle(e.target.value)} className='input input-bordered w-full max-w-xs' />
+        <textarea placeholder='Message' value={message} onChange={(e) => setMessage(e.target.value)} className='textarea textarea-bordered w-full max-w-xs' />
       </div>
-         <button
+      <button
         className="btn btn-xs lg:btn-md btn-primary"
         onClick={handleSubmit}
         disabled={createEntry.isPending || !isFormValid}
@@ -116,7 +116,7 @@ function JournalCard({ account }: { account: PublicKey }) {
   return accountQuery.isLoading ? (
     <span className="loading loading-spinner loading-lg"></span>
   ) : (
-    <div className="card card-bordered border-base-300 border-4 text-neutral-content">
+    <div className="card card-bordered border-base-300 border-4 text-neutral-content mb-1">
       <div className="card-body items-center text-center">
         <div className="space-y-6">
           <h2
